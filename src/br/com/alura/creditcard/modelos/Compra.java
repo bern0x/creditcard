@@ -1,6 +1,8 @@
 package br.com.alura.creditcard.modelos;
 
-public class Compra {
+import java.util.List;
+
+public class Compra implements Comparable<Compra> {
 
     private String descricao;
     private double valor;
@@ -19,9 +21,7 @@ public class Compra {
     }
 
     @Override
-    public String toString() {
-        return "Fatura: " +
-                "Descricao = '" + descricao + '\'' +
-                "Valor = R$ " + valor + '}';
+    public int compareTo(Compra outraCompra) {
+        return Double.valueOf(this.valor).compareTo(Double.valueOf(outraCompra.valor));
     }
 }
