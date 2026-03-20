@@ -18,9 +18,11 @@ public class CartaoCredito {
     public boolean lancamentoCompra(Compra compra) {
         if (compra.getValor() <= this.saldo) {
             this.saldo -= compra.getValor();
+            this.compras.add(compra);
+            System.out.println("Compra realizada!");
             return true;
-            this.compras.add(Compra);
         } else {
+            System.out.println("Compra fracassada, saldo insuficiente");
             return false;
         }
     }
